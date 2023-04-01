@@ -307,6 +307,8 @@
     <None Include="Inc\glm\gtx\vector_query.inl" />
     <None Include="Inc\glm\gtx\wrap.inl" />
     <None Include="Lib\glfw3.dll" />
+    <None Include="Src\Shaders\D_frag.glsl" />
+    <None Include="Src\Shaders\D_vert.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Inc\glm\detail\glm.cpp" />

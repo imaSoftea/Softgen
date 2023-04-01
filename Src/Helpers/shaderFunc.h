@@ -1,5 +1,8 @@
 #pragma once
 
+#include <fstream>
+#include <string>
+
 namespace Softgen
 {
 	static unsigned int CompileShader(const std::string& source, unsigned int type)
@@ -47,6 +50,25 @@ namespace Softgen
 		glDeleteShader(fragment);
 
 		return program;
+	}
+
+	static std::string ProcessShaderFile(const std::string& filename)
+	{
+		std::ifstream file(filename);
+
+		#ifdef __DEBUG
+		if (!file.is_open()) {
+			std::cerr << "ERROR: cannot open file " << filename << std::endl;
+			return "";
+		}
+		#endif
+
+		std::string content((std::istreambuf_iterator<char>(file)),
+			(std::istreambuf_iterator<char>()));
+
+		file.close();
+
+		return content;
 	}
 }
 
