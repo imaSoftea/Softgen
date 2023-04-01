@@ -10,7 +10,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="assimp-vc142-mtd.dll" />
     <None Include="Inc\assimp\color4.inl" />
     <None Include="Inc\assimp\material.inl" />
     <None Include="Inc\assimp\matrix3x3.inl" />
@@ -155,6 +154,7 @@
     <None Include="Inc\glm\gtx\vector_angle.inl" />
     <None Include="Inc\glm\gtx\vector_query.inl" />
     <None Include="Inc\glm\gtx\wrap.inl" />
+    <None Include="Lib\glfw3.dll" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\main.cpp">
@@ -163,13 +163,14 @@
     <ClCompile Include="Inc\glm\detail\glm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Inc\src\glad.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\glfw3.lib" />
     <Library Include="Lib\assimp-vc142-mtd.lib" />
+    <Library Include="Lib\glew32.lib" />
+    <Library Include="Lib\glew32s.lib" />
+    <Library Include="Lib\glfw3dll.lib" />
+    <Library Include="Lib\glfw3_mt.lib" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Inc\assimp\Compiler\poppack1.h" />
@@ -249,7 +250,6 @@
     <ClInclude Include="Inc\assimp\Vertex.h" />
     <ClInclude Include="Inc\assimp\XMLTools.h" />
     <ClInclude Include="Inc\assimp\ZipArchiveIOSystem.h" />
-    <ClInclude Include="Inc\GLAD\glad.h" />
     <ClInclude Include="Inc\GLFW\glfw3.h" />
     <ClInclude Include="Inc\GLFW\glfw3native.h" />
     <ClInclude Include="Inc\glm\detail\_features.hpp" />
@@ -535,5 +535,9 @@
     <ClInclude Include="Inc\glm\vec4.hpp" />
     <ClInclude Include="Inc\glm\vector_relational.hpp" />
     <ClInclude Include="Inc\KHR\khrplatform.h" />
+    <ClInclude Include="Inc\GL\eglew.h" />
+    <ClInclude Include="Inc\GL\glew.h" />
+    <ClInclude Include="Inc\GL\glxew.h" />
+    <ClInclude Include="Inc\GL\wglew.h" />
   </ItemGroup>
 </Project>
