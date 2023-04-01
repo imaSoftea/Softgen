@@ -8,7 +8,10 @@
 #include <Windows.h>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+
 #include <iostream>
+
+#include "Helpers/shaderFunc.h"
 
 #ifdef __DEBUG
 int main()
@@ -68,6 +71,30 @@ int WinMain (_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LP
 
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
+
+	std::string vertexShader = 
+		"#version 410 core\n"
+		""
+		"layout(location = 0) in vec4 position;\n"
+		""
+		"void main()"
+		"{"
+		"	gl_Position = position;\n"
+		"}";
+
+	std::string fragmentShader =
+		"#version 410 core\n"
+		""
+		"layout(location = 0) out vec4 color;\n"
+		""
+		"void main()"
+		"{"
+		"	color = vec4(1.0, 0.0, 0.0, 1.0);\n"
+		"}";
+	
+	unsigned int shader = Softgen::CreateShader(vertexShader, fragmentShader);
+	glLinkProgram(shader);
+	glUseProgram(shader);
 
 	//Loop
 	while (!glfwWindowShouldClose(window))
