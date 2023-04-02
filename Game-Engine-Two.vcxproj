@@ -689,6 +689,7 @@
     <ClInclude Include="Inc\GL\glxew.h" />
     <ClInclude Include="Inc\GL\wglew.h" />
     <ClInclude Include="Inc\KHR\khrplatform.h" />
+    <ClInclude Include="Src\Helpers\errorFunc.h" />
     <ClInclude Include="Src\Helpers\shaderFunc.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
